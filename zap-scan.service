@@ -1,0 +1,9 @@
+[Unit]
+Description=OWASP ZAP baseline scan against Juice Shop (one run)
+After=network.target docker.service
+Requires=docker.service
+
+[Service]
+Type=oneshot
+ExecStart=/opt/pentest_lab/zap_scan.sh http://10.20.1.10:3000 /var/log/zap-reports
+User=pentest

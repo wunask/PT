@@ -1,0 +1,10 @@
+[Unit]
+Description=Run Juice Shop pentest agent every 10 minutes
+
+[Timer]
+OnBootSec=1min
+OnUnitActiveSec=10min
+Unit=juiceshop-agent.service
+
+[Install]
+WantedBy=timers.target

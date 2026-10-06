@@ -1,0 +1,9 @@
+[Unit]
+Description=Juice Shop pentest agent (one scan run)
+After=network.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/opt/pentest_lab
+ExecStart=/usr/bin/python3 /opt/pentest_lab/juice_shop_agent.py --target http://10.20.1.10:3000 --log-dir /var/log/juiceshop-agent
+User=pentest
